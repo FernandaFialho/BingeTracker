@@ -1,9 +1,5 @@
-from django.shortcuts import render
 from .models import Movie
 from .serializers import MovieListSerializer,MovieCreateSerializer
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework import status
 from rest_framework.generics import (DestroyAPIView,ListAPIView,CreateAPIView,UpdateAPIView)
 
 
