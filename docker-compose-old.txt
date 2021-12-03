@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  users.api:
+    image: ${DOCKER_REGISTRY-}users
+    build:
+      context: .
+      dockerfile: /backend/users/Dockerfile

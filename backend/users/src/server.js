@@ -1,22 +1,3 @@
-/* const http = require('http');
-
-let isDocker = true;
-const hostname = (isDocker) ? '0.0.0.0' : '127.0.0.1';
-const port = 3000;
-
-require("./routes")(app);
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-}); */
-
-
 const express = require("express");
 // const bodyParser = require("body-parser"); /* deprecated */
 const cors = require("cors");
@@ -36,12 +17,11 @@ app.use(express.json());  /* bodyParser.json() is deprecated */
 app.use(express.urlencoded({ extended: true }));   /* bodyParser.urlencoded() is deprecated */
 
 const db = require("./db/db");
-
-db.sync({ force: true }).then(() => {
-  console.log("Drop and re-sync db.");
-  const seed = require("./db/seeds");
-  seed();
-});
+db.sync();
+// // drop the table if it already exists
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db.");
+// });
 
 // simple route
 app.get("/", (req, res) => {
@@ -49,7 +29,7 @@ app.get("/", (req, res) => {
 });
 
 const routes = require("./router");
-app.use("/users", routes(app));
+routes(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
