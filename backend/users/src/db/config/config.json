@@ -1,0 +1,10 @@
+{
+  "production": {
+    "username": "user-admin",
+    "password": "admin1234",
+    "database": "userdb",
+    "host": "host.docker.internal",
+    "port": 5432,
+    "dialect": "postgres"
+  }
+}
