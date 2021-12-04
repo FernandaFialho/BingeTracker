@@ -1,6 +1,44 @@
 version: '3.4'
 
 services:
+  avmedia.api:
+    image: bingetracker
+    build:
+      context: backend/av_media
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 8001:8001
+  
+  avmedia.db:
+    image: postgres:12.0-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: BT_av_media
+    ports:
+      - 5432:5432
+
+  livros.api:
+    image: bingetracker
+    build:
+      context: backend/livros_module
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 8000:8000
+  
+  livros.db:
+    image: postgres:12.0-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: BT_livros
+    ports:
+      - 5432:5432
+
   users.api:
     image: bingetracker
     build:
@@ -14,8 +52,8 @@ services:
   users.db:
     image: postgres:12.0-alpine
     environment:
-      POSTGRES_USER: user-admin
-      POSTGRES_PASSWORD: admin1234
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
       POSTGRES_DB: userdb
     ports:
       - 5432:5432

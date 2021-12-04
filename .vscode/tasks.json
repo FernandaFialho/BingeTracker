@@ -4,14 +4,12 @@
 		{
 			"type": "docker-build",
 			"label": "docker-build",
-			"platform": "node",
+			"platform": "python",
 			"dockerBuild": {
-				"dockerfile": "${workspaceFolder}/backend/users/Dockerfile",
-				"context": "${workspaceFolder}/backend/users",
+				"tag": "bingetracker:latest",
+				"dockerfile": "${workspaceFolder}/Dockerfile",
+				"context": "${workspaceFolder}",
 				"pull": true
-			},
-			"node": {
-				"package": "${workspaceFolder}/backend/users/package.json"
 			}
 		},
 		{
@@ -31,15 +29,14 @@
 			"dependsOn": [
 				"docker-build"
 			],
-			"dockerRun": {
-				"env": {
-					"DEBUG": "*",
-					"NODE_ENV": "development"
-				}
-			},
-			"node": {
-				"package": "${workspaceFolder}/backend/users/package.json",
-				"enableDebugging": true
+			"python": {
+				"args": [
+					"runserver",
+					"0.0.0.0:8001",
+					"--nothreading",
+					"--noreload"
+				],
+				"file": "backend\\av_media\\manage.py"
 			}
 		}
 	]
