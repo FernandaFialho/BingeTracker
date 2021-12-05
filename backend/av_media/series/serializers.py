@@ -1,22 +1,12 @@
-from .models import Season,Series
+from .models import Series
 from rest_framework import serializers
 
 class SeriesListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Series
-        fields = ['id','title','streaming_service']
+        fields = ['id','title','user_id','rating']
 
 class SeriesCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Series
-        fields = ['title','streaming_service']
-
-class SeasonListSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Season
-        fields = ['id','show','season_number','n_episodes']
-
-class SeasonCreateSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Season
-        fields = ['show','season_number','n_episodes']
+        fields = ['title','user_id','rating']
