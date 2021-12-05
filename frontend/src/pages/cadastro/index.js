@@ -10,49 +10,77 @@ function Header() {
 
     return (
         <AreaPag> 
+            
 
             <form> 
-                <label size='20px'>Digite seu nome</label>
-
-                <input type='text'
+                <input 
+                style={{
+                    backgroundColor: '#C4C4C4',
+                    width: '480px',
+                    height:'40px',
+                    marginLeft: '95px',
+                    marginTop:'250px',
+                    borderRadius: '30px'
+                }}
+                type='text'
                     {...register("nome")}
                     
                 />
-
-                <input type='email'
-                    {...register("email")}
-                />
-
-                <input type='password'
-                    {...register("senha")}
-                />
-
-                
-
-
             </form> 
 
-            <Button color= '#5B97CE' 
+            <form> 
+            <input
+                style={{
+                    backgroundColor: '#C4C4C4',
+                    width: '480px',
+                    height:'40px',
+                    marginLeft: '95px',
+                    marginTop:'63px',
+                    borderRadius: '30px'
+                }}
+                type='email'
+                    {...register("email")}
+                />
+            </form>
+
+            <form> 
+                <input 
+                style={{
+                    backgroundColor: '#C4C4C4',
+                    width: '480px',
+                    height:'40px',
+                    marginLeft: '95px',
+                    marginTop:'63px',
+                    borderRadius: '30px'
+                }}
+                type='password'
+                    {...register("senha")}
+                />
+                </form>
+
+            <Button color= '#90CAFF' 
             text= 'Cadastrar' 
-            width='228px' 
-            heigth='92px' 
-            marginTop='555px'
-            marginLeft='98px'
-            fontSize='30px' 
+            width='190px' 
+            heigth='60px'
+            borderRadius= '30px' 
+            marginTop='95px'
+            marginLeft='120px'
+            fontSize='24px' 
             onClick={ handleSubmit ( 
                 (data) => {
                     console.log(data)
-               
+                    history('/home')
                 }
-            ) }/> 
+            ) } /> 
 
-            <Button color= '#5B97CE' 
+            <Button color= '#90CAFF' 
             text= 'Cancelar' 
-            width='228px' 
-            heigth='92px' 
-            marginTop='555px'
-            marginLeft='32px'
-            fontSize='30px'
+            width='190px' 
+            heigth='60px'
+            borderRadius= '30px' 
+            marginTop='95px'
+            marginLeft='30px'
+            fontSize='24px'
             onClick={ () => {
                 
                 history('/')
