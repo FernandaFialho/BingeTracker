@@ -8,36 +8,38 @@ function Header() {
 
     return (
         <AreaPag> 
-            <Button color= '#5B97CE' 
-            text= 'Criar conta' 
-            width='359px' 
-            heigth='101px' 
-            left='155px' 
-            top='585px'
-            marginTop='585px'
-            marginLeft='198px'
-            fontSize='30px' 
+            <Button 
+            color= '#90CAFF' 
+            text= 'Criar conta'
+            textColor= 'white' 
+            width='300px' 
+            heigth='60px'
+            borderRadius= '30px'
+            marginTop='600px'
+            marginLeft='400px'
+            fontSize='24px' 
             onClick={ () => {
                 
                 history('/cadastro')
             }
             }/> 
 
-            <Button color= '#5B97CE' 
+            {/* <Button color= '#5B97CE' 
             text= 'Entrar com Google' 
             width='359px' 
             heigth='101px' 
             marginTop='585px'
             marginLeft='23px'
-            fontSize='30px'/> 
+            fontSize='30px'/>  */}
 
-            <Button color= '#5B97CE' 
+            <Button color= '#90CAFF' 
             text= 'Usar sem cadastro' 
-            width='359px' 
-            heigth='101px' 
-            marginTop='585px'
-            marginLeft='23px'
-            fontSize='30px'
+            width='300px' 
+            heigth='60px'
+            borderRadius= '30px'
+            marginTop='600px'
+            marginLeft='105px'
+            fontSize='24px'
             onClick={ () => {
                 
                     history('/home')
