@@ -10,7 +10,7 @@ import Livros from './pages/livros';
 import Midias from './pages/midias';
 import User from './pages/user';
 import './index.css'; 
-
+import './App.css';
 
 function App() {
   return (
