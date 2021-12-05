@@ -4,19 +4,6 @@ import { AreaPag } from './styled';
 
 function Header() {
     const history = useNavigate()
-    const exemplo = [{
-        'title': 'livro1',
-        'user_id': 5,
-        'rating': 6
-    },
-    {
-        'title': 'livro4',
-        'user_id': 5,
-        'rating': 10 
-    }
-    ]
-
-
     const sairImageClick = () => {
         history('/');
       }
@@ -25,17 +12,17 @@ function Header() {
         history('/home');
       } 
 
-      const midiasImageClick = () => {
-        history('/midias');
+      const livrosImageClick = () => {
+        history('/livros');
       } 
 
-      const avatarImageClick = () => {
-        history('/user');
+      const midiasImageClick = () => {
+        history('/midias');
       }
 
     return (
         <AreaPag> 
-             <img src={require('./home.png')} onClick={() => homeImageClick()}
+            <img src={require('./livros.png')} onClick={() => livrosImageClick()}
             style={{
                 width:'77px',
                 height:'77px',
@@ -51,7 +38,7 @@ function Header() {
                 marginTop: '90px',
             }} />
 
-            <img src={require('./Avatar.png')} onClick={() => avatarImageClick()}
+            <img src={require('./home.png')} onClick={() => homeImageClick()}
             style={{
                 width:'77px',
                 height:'77px',
@@ -73,7 +60,7 @@ function Header() {
                 marginLeft:'113px',
                 fontSize:'34px'
             }}
-            >Aqui estão seus registros de livros:</div>
+            >Sua página</div>
             
         </AreaPag>
     );
