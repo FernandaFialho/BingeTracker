@@ -52,13 +52,20 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+<<<<<<< HEAD
 ]
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+=======
+>>>>>>> 66507e5354ed79d6fa2ba4f4e6db02f302c72a59
 ]
 
 ROOT_URLCONF = 'av_media.urls'
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]
 
 TEMPLATES = [
     {
