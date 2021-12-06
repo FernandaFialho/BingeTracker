@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "livros_app",
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'livros_module.urls'
@@ -71,6 +73,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'livros_module.wsgi.application'
 
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
