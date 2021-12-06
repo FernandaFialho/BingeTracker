@@ -1,6 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import { AreaPag } from './styled';
+import livros from './livros.png';
+import midias from './midias.png';
+import home from './home.png';
+import sair from './sair.png';
 
 function Header() {
     const history = useNavigate()
@@ -22,7 +26,7 @@ function Header() {
 
     return (
         <AreaPag> 
-            <img src={require('./livros.png')} onClick={() => livrosImageClick()}
+            <img src={livros} onClick={() => livrosImageClick()}
             style={{
                 width:'77px',
                 height:'77px',
@@ -30,7 +34,7 @@ function Header() {
                 marginTop: '90px',
             }} />
 
-            <img src={require('./midias.png')} onClick={() => midiasImageClick()}
+            <img src={midias} onClick={() => midiasImageClick()}
             style={{
                 width:'77px',
                 height:'77px',
@@ -38,7 +42,7 @@ function Header() {
                 marginTop: '90px',
             }} />
 
-            <img src={require('./home.png')} onClick={() => homeImageClick()}
+            <img src={home} onClick={() => homeImageClick()}
             style={{
                 width:'77px',
                 height:'77px',
@@ -46,7 +50,7 @@ function Header() {
                 marginTop: '90px',
             }} />
 
-            <img src={require('./sair.png')} onClick={() => sairImageClick()}
+            <img src={sair} onClick={() => sairImageClick()}
             style={{
                 width:'77px',
                 height:'77px',

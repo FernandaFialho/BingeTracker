@@ -11,21 +11,24 @@ import Midias from './pages/midias';
 import User from './pages/user';
 import './index.css'; 
 import './App.css';
+import { AuthProvider } from './components/authContext';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-          <Route exact path="/" element={<Login/>}/>
-          <Route exact path="/login" element={<LoginOfc/>}/>
-          <Route path="/cadastro"element={<Cadastrar/>}/>
-          <Route path="/home"element={<Home/>}/>
-          <Route path="/livros"element={<Livros/>}/>
-          <Route path="/midias"element={<Midias/>}/>
-          <Route path="/user"element={<User/>}/>
-      </Routes>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+            <Route exact path="/" element={<Login/>}/>
+            <Route exact path="/login" element={<LoginOfc/>}/>
+            <Route path="/cadastro"element={<Cadastrar/>}/>
+            <Route path="/home"element={<Home/>}/>
+            <Route path="/livros"element={<Livros/>}/>
+            <Route path="/midias"element={<Midias/>}/>
+            <Route path="/user"element={<User/>}/>
+        </Routes>
 
-    </BrowserRouter>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Button from '../../components/Button';
 import { useNavigate } from 'react-router';
 import { AreaPag } from './styled';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../components/authContext';
 
 function Header() {
     const history = useNavigate()
     const { register, handleSubmit } = useForm ()
+    const auth = useContext (AuthContext) 
 
     return (
         <AreaPag> 
@@ -20,8 +22,8 @@ function Header() {
                     marginTop:'308px',
                     borderRadius: '30px'
                 }}
-                type='email'
-                    {...register("email")}
+                type='text'
+                    {...register("username")}
                 />
             </form>
 
@@ -36,7 +38,7 @@ function Header() {
                     borderRadius: '30px'
                 }}
                 type='password'
-                    {...register("senha")}
+                    {...register("password")}
                 />
                 </form>
 
@@ -49,9 +51,11 @@ function Header() {
             marginLeft='126px'
             fontSize='24px' 
             onClick={ handleSubmit ( 
-                (data) => {
-                    console.log(data)
-                    history('/home')
+                async (data) => {
+                    const islogin = await auth.login(data.username, data.password)
+                    if (islogin) {
+                        history('/home')
+                    }
                 }
             ) } /> 
 

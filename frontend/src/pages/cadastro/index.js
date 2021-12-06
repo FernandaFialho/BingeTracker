@@ -29,21 +29,6 @@ function Header() {
             </form> 
 
             <form> 
-            <input
-                style={{
-                    backgroundColor: '#C4C4C4',
-                    width: '480px',
-                    height:'40px',
-                    marginLeft: '95px',
-                    marginTop:'63px',
-                    borderRadius: '30px'
-                }}
-                type='email'
-                    {...register("email")}
-                />
-            </form>
-
-            <form> 
                 <input 
                 style={{
                     backgroundColor: '#C4C4C4',
@@ -63,7 +48,7 @@ function Header() {
             width='190px' 
             heigth='60px'
             borderRadius= '30px' 
-            marginTop='95px'
+            marginTop='200px'
             marginLeft='120px'
             fontSize='24px' 
             onClick={ handleSubmit ( 
@@ -78,7 +63,7 @@ function Header() {
             width='190px' 
             heigth='60px'
             borderRadius= '30px' 
-            marginTop='95px'
+            marginTop='200px'
             marginLeft='30px'
             fontSize='24px'
             onClick={ () => {
